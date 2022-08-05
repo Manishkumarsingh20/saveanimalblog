@@ -8,9 +8,6 @@
 .editorbg{
     background-image: radial-gradient( circle farthest-corner at 1.5% 1.4%,  rgba(159,227,255,1) 0%, rgba(255,177,219,1) 100.2% );
     height:100vh;
-    
-    
-    /* width:100%; */
 }
 
 #admineditor{
@@ -20,6 +17,16 @@
 .border{
     background: url("./image/app.png");
     border-radius: 10px;
-    box-shadow: 5px 10px;
+    box-shadow: 5px 10px 5px 10px;
+}
 
+#text{
+    color:red;
+}
+#textpass{
+    color:red;
+}
+
+.panel{
+    font-weight: italic;
 }

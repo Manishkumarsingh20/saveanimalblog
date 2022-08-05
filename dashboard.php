@@ -27,6 +27,8 @@ if (!isset($_SESSION['email'])) {
     <link rel="stylesheet" href="./m.css">
     <script src="./ckeditor/ckeditor.js"></script>
     <script src="./ckfinder/ckfinder.js"></script>
+
+
     <title>Dashboard</title>
 </head>
 <style>
@@ -65,7 +67,7 @@ if (!isset($_SESSION['email'])) {
 
     <nav class="navbar bg-dark">
         <div class="container">
-            <a class="navbar-brand">Admin Panel</a>
+            <a class="navbar-brand panel">Admin Panel</a>
             <form method="post">
                 <button type="submit" name="logout" class="btn btn-danger my-4 offset-5" value="Logout">Logout</button>
         </div>
@@ -82,6 +84,7 @@ if (!isset($_SESSION['email'])) {
         <script>
             var editor = CKEDITOR.replace('admineditor');
             CKFinder.setupCKEditor(editor);
+            editor.config.extraPlugins = 'youtube,colorbutton,emoji,video,justify,sharedspace,tableresize,preview,showblocks';
         </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
@@ -94,6 +97,5 @@ if (!isset($_SESSION['email'])) {
         ?>
 
 </body>
+
 </html>
-
-

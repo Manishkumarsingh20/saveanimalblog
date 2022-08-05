@@ -29,7 +29,7 @@ class dbconnection
             $_SESSION['email'] = $email;
             header("location:dashboard.php");
         } else {
-            $_SESSION['status'] = "Please Enter Correct Email and Password";
+            $_SESSION['alert'] = "Please Enter Correct Email and Password";
             header("location:adminpanel.php");
         }
     }
@@ -39,6 +39,7 @@ class dbconnection
     {
         $query = "SELECT * FROM editor";
         $query_select = $this->connect_db->query($query);
+        $content=addslashes($content);
         if (mysqli_num_rows($query_select) == 0) {
             $sql_query = "INSERT INTO editor(content,dateandtime)Values('$content','$date')";
             $query_insert = $this->connect_db->query($sql_query);
@@ -59,6 +60,7 @@ class dbconnection
             }
         }
     }
+         
 
 
 

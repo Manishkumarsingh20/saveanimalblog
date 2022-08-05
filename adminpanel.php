@@ -12,15 +12,47 @@ if (isset($_POST['login'])) {
     $result = $obj->login($email, $pass);
 }
 
-if (isset($_POST['email']) == true &&  empty($_POST['email'] == false)) {
-    $email_add = $_POST['email'];
-    if (filter_var($email, FILTER_VALIDATE_EMAIL) == true) {
-    } else {
-        echo "not validate";
-    }
-}
+// if (isset($_POST['email']) == true &&  empty($_POST['email'] == false)) {
+//     $email_add = $_POST['email'];
+//     if (filter_var($email, FILTER_VALIDATE_EMAIL) == true) {
+//     } else {
+//         echo "not validate";
+//     }
+// }
 
 ?>
+
+<style>
+    .manish {
+        margin: -71px 21px 10px 121px;
+        color: red;
+    }
+
+    .one {
+        border: 1px solid blue;
+        padding: 2px 13px;
+        transition: 1.8s;
+        border-radius: 20px;
+    }
+
+    .one:hover {
+        color: white;
+    }
+
+    .one:hover {
+        background: blue;
+    }
+
+    #text {
+        color: red;
+    }
+
+    #textpass {
+        color: red;
+    }
+</style>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,19 +70,18 @@ if (isset($_POST['email']) == true &&  empty($_POST['email'] == false)) {
 
 <body>
     <?php
-    if (isset($_SESSION['status'])) {
+    if (isset($_SESSION['alert'])) {
     ?>
         <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            <strong>Alert!</strong> <?php echo $_SESSION['status']; ?>
+            <strong>Alert!</strong> <?php echo $_SESSION['alert']; ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-    <?php
 
+    <?php
     }
-    // unset($_SESSION['status']);
     ?>
 
-    <div class=" py-5 text-center my-bg ">
+    <div class=" py-5 text-center my-bg">
         <i>
             <h1>Admin Panel </h1>
         </i>
@@ -65,7 +96,7 @@ if (isset($_POST['email']) == true &&  empty($_POST['email'] == false)) {
             <div class="row py-4 my-5">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 my-5">
-                    <form method="post">
+                    <form method="post" >
 
                         <!-- email start -->
                         <div class="form-floating mb-3">
@@ -83,11 +114,15 @@ if (isset($_POST['email']) == true &&  empty($_POST['email'] == false)) {
                         </div>
                         <!-- password end -->
                         <button type="submit" name="login" onclick=" return validateadmit_panel()" class="btn btn-primary one mt-3">Login</button>
+
                     </form>
+
                 </div>
                 <div class="col-sm-4"></div>
             </div>
         </div>
+
+
 
         <script>
             function validateadmit_panel() {
@@ -108,6 +143,7 @@ if (isset($_POST['email']) == true &&  empty($_POST['email'] == false)) {
                     span.innerHTML = "**invalid Email"
                     return false;
                 }
+
 
 
                 var password = document.getElementById('floatingPassword').value;
@@ -132,16 +168,11 @@ if (isset($_POST['email']) == true &&  empty($_POST['email'] == false)) {
 
             }
         </script>
+        
 
-
-
-<!-- JavaScript Bundle with Popper -->
-<!-- <script scr="./js/admin.js"></script> -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+        <!-- JavaScript Bundle with Popper -->
+        <!-- <script scr="./js/admin.js"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>
-
-
-
-
