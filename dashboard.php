@@ -69,14 +69,14 @@ if (!isset($_SESSION['email'])) {
         <div class="container">
             <a class="navbar-brand panel">Admin Panel</a>
             <form method="post">
-                <button type="submit" name="logout" class="btn btn-danger my-4 offset-5" value="Logout">Logout</button>
+                <button type="submit" name="logout" class="btn btn-danger my-4 offset-5 changebtn" value="Logout">Logout</button>
         </div>
     </nav>
     <div class="editorbg ">
         <div class="py-5">
             <div class="col-8 offset-2 py-5 ">
                 <textarea id="admineditor" name="admineditor">  </textarea>
-                <button type="submit" name="submit" class="btn btn-success my-3">Submit</button>
+                <button type="submit" name="submit" class="btn btn-success my-3 ">Submit</button>
             </div>
             </form>
         </div>

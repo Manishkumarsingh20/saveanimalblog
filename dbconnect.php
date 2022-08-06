@@ -1,13 +1,10 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 session_start();
 class dbconnection
 {
     protected $db_name = 'manish';
     protected $db_user = 'tse';
-    protected $db_pass = '0wi&lbRuPuv';
+    protected $db_pass = 'bPmtHasjyTJ2SgZJ';
     protected $db_host = 'localhost';
     public $connect_db;
     public function __construct()
@@ -18,7 +15,7 @@ class dbconnection
             echo "connected";
 
         } else {
-            echo " not connected";
+            // echo " not connected";
         }
     }
 
