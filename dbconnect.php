@@ -13,6 +13,7 @@ class dbconnection
         $this->connect_db = new mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name);
         if (!$this->connect_db) {
             echo "connected";
+            
         } else {
             // echo " not connected";
         }
@@ -31,7 +32,7 @@ class dbconnection
         } else {
             $_SESSION['alert'] = "Please Enter Correct Email and Password";
             header("location:adminpanel.php");
-            
+
         }
     }
 
