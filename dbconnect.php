@@ -2,9 +2,9 @@
 session_start();
 class dbconnection
 {
-    protected $db_name = 'projectdemo';
-    protected $db_user = 'root';
-    protected $db_pass = 'hestabit';
+    protected $db_name = 'manish';
+    protected $db_user = 'tse';
+    protected $db_pass = '0wi&lbRuPuv';
     protected $db_host = 'localhost';
     public $connect_db;
     public function __construct()
@@ -13,7 +13,7 @@ class dbconnection
         $this->connect_db = new mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name);
         if (!$this->connect_db) {
             echo "connected";
-            
+
         } else {
             // echo " not connected";
         }
