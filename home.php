@@ -56,7 +56,7 @@
             <div class="col-sm-3 text-center" id="Home">
             </div>
             <div class="col-sm-6 text-center my-2" id="connection">
-                <p class="footer_detail">animalenquery.co.in</p>
+                <p class="footer_detail">animalenquiry.co.in</p>
                 <p class="footer_detail">120-140,5th floor,Noida,
                     Uttar Pradesh,India </p>
                 <p class="footer_detail">© copyrights 2022 All rights reserved.</p>
