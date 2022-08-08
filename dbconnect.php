@@ -4,7 +4,7 @@ class dbconnection
 {
     protected $db_name = 'manish';
     protected $db_user = 'tse';
-    protected $db_pass = 'bPmtHasjyTJ2SgZJ';
+    protected $db_pass = '0wi&lbRuPuv';
     protected $db_host = 'localhost';
     public $connect_db;
     public function __construct()
@@ -66,7 +66,8 @@ class dbconnection
         $sql = "SELECT content  FROM  editor";
         $result = $this->connect_db->query($sql);
     
-        if (mysqli_num_rows($result) > 0) {
+        if (mysqli_num_rows($result) > 0) 
+        {
             $data = $result->fetch_assoc();
         } else {
             echo "not data";
@@ -77,11 +78,11 @@ class dbconnection
 
     public function editorappend()
     {
-        $sql = "SELECT content  FROM  editor";
-        $result = $this->connect_db->query($sql);
-        if (mysqli_num_rows($result) > 0)
+        $query = "SELECT content  FROM  editor";
+        $dashboard = $this->connect_db->query($query);
+        if (mysqli_num_rows($dashboard) > 0)
         {
-            $data = $result->fetch_assoc();
+            $data = $dashboard->fetch_assoc();
         } else 
         {
             echo "not data";
