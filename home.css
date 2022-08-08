@@ -7,6 +7,7 @@
     
   .heading{
     color:white;
+    font-size: 27px;
     /* background:white; */
   
   }
@@ -23,7 +24,7 @@
    
     background-image: url("./image/elephant1\ \(1\).jpg");
     background-size: cover;
-    height:auto;
+    height:70vh;
   }
   #left_sidebar:hover{
     background-image: url("./image/ele2.jpg");
@@ -32,7 +33,7 @@
 
   #right_sidebar{
    
-    height:auto;
+    height:70vh;
     background-image: url("./image/pexels-julissa-helmuth-37772001.jpg");
     background-size: cover;
    
@@ -45,7 +46,7 @@
 
   #content{
      
-    height:auto;
+    height:70vh;
     background-image:cover;
   }
 
@@ -65,10 +66,14 @@
 
   #content{
     max-width: 100%;
-    height: auto;
+    overflow-y:auto;
   }
 
   #content img{
     max-width: 100%;
+  }
+
+  #header{
+    height:73px;
   }
 
