@@ -87,7 +87,7 @@ if (isset($_POST['login'])) {
                     <form method="post">
                         <!-- email start -->
                         <div class="form-floating mb-3">
-                            <input name="email" type="text" class="form-control" onchange="return validateadmit_panel()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
+                            <input name="email" type="text" class="form-control" onkeyup="return validateadmit_panel()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                             <span id="text"></span>
                         </div>
@@ -95,12 +95,12 @@ if (isset($_POST['login'])) {
 
                         <!-- password start -->
                         <div class="form-floating">
-                            <input name="pass" type="password" class="form-control" onchange="return validateadmit_panel()" autocomplete="off" id="floatingPassword" placeholder="Password">
+                            <input name="pass" type="password" class="form-control" onkeyup="return validateadmit_panel()" autocomplete="off" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                             <span id="textpass"></span>
                         </div>
                         <!-- password end -->
-                        
+
                         <button type="submit" name="login" onclick=" return validateadmit_panel()" class="btn btn-primary one mt-3">Login</button>
                     </form>
                 </div>
@@ -118,7 +118,7 @@ if (isset($_POST['login'])) {
                 var emairegex = /^[a-zA-Z0-9+_\.\-]+[@][a-z]+\.[a-z]{2,3}$/;
                 if (email.match(regex)) {
                     span.innerHTML = "**please Don't use space";
-                    return false;
+                    // return false;
                 } else {
                     span.innerHTML = "";
                 }
@@ -127,7 +127,7 @@ if (isset($_POST['login'])) {
 
                 } else {
                     span.innerHTML = "**invalid Email"
-                    return false;
+                    // return false;
                 }
 
 
@@ -138,7 +138,7 @@ if (isset($_POST['login'])) {
                 var regexpass = /^\s*$/;
                 if (password.match(regexpass)) {
                     spanpass.innerHTML = "**please enter correct password";
-                    return false;
+                    // return false;
                 } else {
                     spanpass.innerHTML = "";
 
