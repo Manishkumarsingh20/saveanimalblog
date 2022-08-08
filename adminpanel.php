@@ -1,7 +1,4 @@
 <?php
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
 include_once "dbconnect.php";
 $obj = new dbconnection;
 session_start();
@@ -11,14 +8,6 @@ if (isset($_POST['login'])) {
     $pass = md5($_POST['pass']);
     $result = $obj->login($email, $pass);
 }
-
-// if (isset($_POST['email']) == true &&  empty($_POST['email'] == false)) {
-//     $email_add = $_POST['email'];
-//     if (filter_var($email, FILTER_VALIDATE_EMAIL) == true) {
-//     } else {
-//         echo "not validate";
-//     }
-// }
 
 ?>
 
@@ -76,7 +65,6 @@ if (isset($_POST['login'])) {
             <strong>Alert!</strong> <?php echo $_SESSION['alert']; ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
-
     <?php
     }
     ?>
@@ -96,8 +84,7 @@ if (isset($_POST['login'])) {
             <div class="row py-4 my-5">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 my-5">
-                    <form method="post" >
-
+                    <form method="post">
                         <!-- email start -->
                         <div class="form-floating mb-3">
                             <input name="email" type="text" class="form-control" onchange="return validateadmit_panel()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
@@ -113,10 +100,9 @@ if (isset($_POST['login'])) {
                             <span id="textpass"></span>
                         </div>
                         <!-- password end -->
+                        
                         <button type="submit" name="login" onclick=" return validateadmit_panel()" class="btn btn-primary one mt-3">Login</button>
-
                     </form>
-
                 </div>
                 <div class="col-sm-4"></div>
             </div>
@@ -168,7 +154,7 @@ if (isset($_POST['login'])) {
 
             }
         </script>
-        
+
 
         <!-- JavaScript Bundle with Popper -->
         <!-- <script scr="./js/admin.js"></script> -->
