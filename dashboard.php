@@ -92,7 +92,7 @@ if (!isset($_SESSION['email'])) {
                 },
                 dataType: "json",
                 success: function(response) {
-                    $('#admineditor').html(response.content)
+                    $('body #admineditor').html(response.content)
                    
                 }
             });
