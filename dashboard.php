@@ -21,8 +21,10 @@ if (!isset($_SESSION['email'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="./m.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="./ckeditor/ckeditor.js"></script>
     <script src="./ckfinder/ckfinder.js"></script>
     <title>Dashboard</title>
@@ -68,20 +70,20 @@ if (!isset($_SESSION['email'])) {
     <div class="editorbg ">
         <div class="py-5">
             <div class="col-8 offset-2 py-5 ">
-                <textarea id="admineditor" name="admineditor"></textarea>
-                <p id="error"></p>
-                <input type="submit" name="submit" value="submit" class="btn btn-success my-3">
+            <textarea id="admineditor" name="admineditor"></textarea>
+                
+            <button type="submit" name="submit" class="btn btn-success my-3">Submit</button>
             </div>
             </form>
         </div>
-    </div>
+    
     <script>
         var editor = CKEDITOR.replace('admineditor');
         CKFinder.setupCKEditor(editor);
         editor.config.extraPlugins = 'youtube,colorbutton,emoji,video,justify,sharedspace,tableresize';
     </script>
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
     <script>
         $(document).ready(function() {
             $.ajax({
@@ -92,8 +94,7 @@ if (!isset($_SESSION['email'])) {
                 },
                 dataType: "json",
                 success: function(response) {
-                    alert('dsdsds');
-                    $('body #admineditor').html(response.content)
+                    $('#admineditor').html(response.content)
                    
                 }
             });
