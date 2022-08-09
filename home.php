@@ -17,7 +17,7 @@
     <div class="container-fluid " id="header">
         <div class="row" id="row_info">
             <div class="col-2 text-center py-1">
-                <img src="./image/liion.jpg" width="100" height="100" style="border-radius:50%;height: 67px;width: 92px;"">
+                <img src="./image/liion.jpg" width="100" height="100" style="border-radius:50%;height: 67px;width: 92px;">
         </div>
         <div class=" col-8 my-2 offset-2">
                 <h1><i class="heading">"Act Before It Vanishes Forever"</i></h1>
