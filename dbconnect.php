@@ -39,11 +39,9 @@ class dbconnection
         if (mysqli_num_rows($query_select) == 0) {
             $sql_query = "INSERT INTO editor(content,dateandtime)Values('$content','$date')";
             $query_insert = $this->connect_db->query($sql_query);
-            if ($query_insert)
-            {
+            if ($query_insert) {
                 $_SESSION['insert'] = "Inserted Successfully";
-            } else 
-            {
+            } else {
                 echo "not updated";
             }
         } else {
@@ -51,11 +49,9 @@ class dbconnection
             if (mysqli_num_rows($query_select) > 0);
             $sql = "UPDATE editor SET content = '$content',dateandtime='$date'";
             $data = $this->connect_db->query($sql);
-            if ($data) 
-            {
+            if ($data) {
                 $_SESSION['update'] = "Updated Successfully";
-            } else 
-            {
+            } else {
                 echo "not updated";
             }
         }
@@ -65,9 +61,8 @@ class dbconnection
     {
         $sql = "SELECT content  FROM  editor";
         $result = $this->connect_db->query($sql);
-    
-        if (mysqli_num_rows($result) > 0) 
-        {
+
+        if (mysqli_num_rows($result) > 0) {
             $data = $result->fetch_assoc();
         } else {
             echo "not data";
@@ -80,30 +75,21 @@ class dbconnection
     {
         $query = "SELECT content  FROM  editor";
         $dashboard = $this->connect_db->query($query);
-        if (mysqli_num_rows($dashboard) > 0)
-        {
+        if (mysqli_num_rows($dashboard) > 0) {
             $data = $dashboard->fetch_assoc();
-        } else 
-        {
+        } else {
             echo "not data";
         }
-        echo json_encode($data);
-
+        echo  json_encode($data);
     }
 }
 
 $obj = new dbconnection;
 
-if (isset($_POST['check_detail_content']))
-{
+if (isset($_POST['check_detail_content'])) {
     $result = $obj->append();
 }
 
-if (isset($_POST['check_detail_editor'])) 
-{
+if (isset($_POST['check_detail_editor'])) {
     $result = $obj->editorappend();
 }
-
-
-
-
