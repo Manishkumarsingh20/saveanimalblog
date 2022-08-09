@@ -70,6 +70,7 @@ class dbconnection
         echo json_encode($data);
     }
 
+<<<<<<< HEAD
     public function editorappend()
     {
         $sql = "SELECT content  FROM  editor";
@@ -77,12 +78,24 @@ class dbconnection
 
         if (mysqli_num_rows($result) > 0) {
             $data = $result->fetch_assoc();
+=======
+
+    public function editorappend()
+    {
+        $query = "SELECT content  FROM  editor";
+        $dashboard = $this->connect_db->query($query);
+        if (mysqli_num_rows($dashboard) > 0) {
+            $data = $dashboard->fetch_assoc();
+>>>>>>> 8243cd8b94936e70fc98817270155b47221a97a6
         } else {
             echo "not data";
         }
         echo json_encode($data);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8243cd8b94936e70fc98817270155b47221a97a6
 }
 
 $obj = new dbconnection;
