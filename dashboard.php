@@ -60,57 +60,74 @@ if (!isset($_SESSION['email'])) {
     <nav class="navbar bg-dark">
         <div class="container">
             <a class="navbar-brand panel">Admin Panel</a>
-            <form method="post"  >
+            <form method="post">
                 <button type="submit" name="logout" class="btn btn-danger my-4 offset-5 changebtn" value="Logout">Logout</button>
-            
         </div>
     </nav>
 
     <div class="editorbg ">
         <div class="py-5">
             <div class="col-8 offset-2 py-5 ">
-                <textarea id="admineditor"   name="admineditor"></textarea>
-               
+                <textarea id="admineditor" name="admineditor"></textarea>
+                <p id="error"></p>
                 <input type="submit" name="submit" value="submit" class="btn btn-success my-3">
             </div>
             </form>
         </div>
+    </div>
+    <script>
+        var editor = CKEDITOR.replace('admineditor');
+        CKFinder.setupCKEditor(editor);
+        editor.config.extraPlugins = 'youtube,colorbutton,emoji,video,justify,sharedspace,tableresize,preview,showblocks,font,html5video,videoembed,iframe';
+    </script>
 
-        <script>
-            var editor = CKEDITOR.replace('admineditor');
-            CKFinder.setupCKEditor(editor);
-            editor.config.extraPlugins = 'youtube,colorbutton,emoji,video,justify,sharedspace,tableresize,preview,showblocks,font,html5video,videoembed,iframe';
-        </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: "POST",
+                url: "dbconnect.php",
+                data: {
+                    'check_detail_editor': 1,
+                },
+                dataType: "json",
+                success: function(response) {
+                    console.log(response)
+                    $('#admineditor').html(response.content)
 
-        <script>
-            $(document).ready(function() {
-                $.ajax({
-                    type: "POST",
-                    url: "dbconnect.php",
-                    data: {
-                        'check_detail_editor': 1,
-                    },
-                    dataType: "json",
-                    success: function(response) {
-                        // console.log(response)
-                        $('#admineditor').html(response.content)
-                        
-                    },
-                });
+                },
             });
+        });
+    </script>
 
-    
-        </script>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <?php
-        if (isset($_POST['logout'])) {
-            session_destroy();
-            header("location:adminpanel.php");
-        }
-        ?>
+
+
+
+    <!-- if(isset($_POST['submit'])){
+            $editor=$_POST['admineditor'];
+            if(empty($editor)){
+             echo "empty";
+            }else{
+                echo "not empty";
+            }
+
+        } -->
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <?php
+    if (isset($_POST['logout'])) {
+        session_destroy();
+        header("location:adminpanel.php");
+    }
+    ?>
 </body>
 
 </html>
