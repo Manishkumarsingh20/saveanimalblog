@@ -28,6 +28,7 @@ class dbconnection
         } else {
             $_SESSION['alert'] = "Please Enter Correct Email and Password";
             header("location:adminpanel.php");
+            
         }
     }
 
