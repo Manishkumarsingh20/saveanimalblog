@@ -66,6 +66,7 @@ if (isset($_POST['login'])) {
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     <?php
+    unset($_SESSION['alert']);
     }
     ?>
 
@@ -154,10 +155,6 @@ if (isset($_POST['login'])) {
 
             }
         </script>
-
-
-        <!-- JavaScript Bundle with Popper -->
-        <!-- <script scr="./js/admin.js"></script> -->
     
         <script>
             if (window.history.replaceState) {

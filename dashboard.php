@@ -61,8 +61,9 @@ if (!isset($_SESSION['email'])) {
     ?>
     <nav class="navbar bg-dark">
         <div class="container">
-        <form method="post">
+       
             <a class="navbar-brand panel">Admin Panel</a>
+            <form method="post">
             <button type="submit" name="logout" class="btn btn-danger my-4 offset-5 changebtn" value="Logout">Logout</button>
         </div>
     </nav>
