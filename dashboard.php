@@ -96,7 +96,7 @@ if (!isset($_SESSION['email'])) {
                 dataType: "json",
                 success: function(response) {
                     CKEDITOR.instances['admineditor'].setData(response.content);
-                    console.log(response.content)
+                    // console.log(response.content)
                 }
             });
         });
