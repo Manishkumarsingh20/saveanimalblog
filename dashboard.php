@@ -1,7 +1,4 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 include_once "dbconnect.php";
 $obj = new dbconnection;
 
@@ -91,35 +88,16 @@ if (!isset($_SESSION['email'])) {
                 type: "POST",
                 url: "dbconnect.php",
                 data: {
-                    'check_detail_content': 1,
+                    'check_detail_editor': 1,
                 },
                 dataType: "json",
                 success: function(response) {
                     $('#admineditor').html(response.content)
-                    console.log(response)
+                   
                 }
             });
         });
     </script>
-
-
-
-
-    <!-- if(isset($_POST['submit'])){
-            $editor=$_POST['admineditor'];
-            if(empty($editor)){
-             echo "empty";
-            }else{
-                echo "not empty";
-            }
-
-        } -->
-
-
-
-
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <?php
