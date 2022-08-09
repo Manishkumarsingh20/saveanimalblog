@@ -1,4 +1,7 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include_once "dbconnect.php";
 $obj = new dbconnection;
 session_start();
@@ -93,8 +96,8 @@ if (!isset($_SESSION['email'])) {
                 },
                 dataType: "json",
                 success: function(response) {
-                    console.log(response)
                     $('#admineditor').html(response.content)
+                    console.log(response);
 
                 },
             });

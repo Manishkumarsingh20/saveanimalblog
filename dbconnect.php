@@ -70,18 +70,19 @@ class dbconnection
         echo json_encode($data);
     }
 
-
     public function editorappend()
     {
-        $query = "SELECT content  FROM  editor";
-        $dashboard = $this->connect_db->query($query);
-        if (mysqli_num_rows($dashboard) > 0) {
-            $data = $dashboard->fetch_assoc();
+        $sql = "SELECT content  FROM  editor";
+        $result = $this->connect_db->query($sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            $data = $result->fetch_assoc();
         } else {
             echo "not data";
         }
         echo json_encode($data);
     }
+
 }
 
 $obj = new dbconnection;
