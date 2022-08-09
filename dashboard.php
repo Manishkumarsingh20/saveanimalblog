@@ -81,29 +81,26 @@ if (!isset($_SESSION['email'])) {
     <script>
         var editor = CKEDITOR.replace('admineditor');
         CKFinder.setupCKEditor(editor);
-        editor.config.extraPlugins = 'youtube,colorbutton,emoji,video,justify,sharedspace,tableresize,preview,showblocks,font,html5video,videoembed,iframe';
+        editor.config.extraPlugins = 'youtube,colorbutton,emoji,video,justify,sharedspace,tableresize';
     </script>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function() {
             $.ajax({
                 type: "POST",
                 url: "dbconnect.php",
                 data: {
-                    'check_detail_editor': 1,
+                    'check_detail_content': 1,
                 },
                 dataType: "json",
                 success: function(response) {
                     $('#admineditor').html(response.content)
-                    console.log(response);
-
-                },
+                    console.log(response)
+                }
             });
         });
     </script>
-
 
 
 
