@@ -9,6 +9,7 @@ class dbconnection
     public $connect_db;
     public function __construct()
     {
+        
         $this->connect_db = new mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name);
         if (!$this->connect_db) {
             echo "connected";
