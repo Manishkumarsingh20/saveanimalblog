@@ -76,7 +76,8 @@ if (!isset($_SESSION['email'])) {
             </form>
         </div>
     </div>
-
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script>
         var editor = CKEDITOR.replace('admineditor');
         CKFinder.setupCKEditor(editor);
@@ -94,14 +95,13 @@ if (!isset($_SESSION['email'])) {
                 },
                 dataType: "json",
                 success: function(response) {
-                    $('#admineditor').html(response.content)
+                    CKEDITOR.instances['admineditor'].setData(response.content);
                     console.log(response.content)
                 }
             });
         });
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <?php
     if (isset($_POST['logout'])) {
         session_destroy();
