@@ -62,21 +62,21 @@ if (!isset($_SESSION['email'])) {
     <nav class="navbar bg-dark">
         <div class="container">
             <a class="navbar-brand panel">Admin Panel</a>
-            <form method="post">
-                <button type="submit" name="logout" class="btn btn-danger my-4 offset-5 changebtn" value="Logout">Logout</button>
+            <button type="submit" name="logout" class="btn btn-danger my-4 offset-5 changebtn" value="Logout">Logout</button>
         </div>
     </nav>
 
     <div class="editorbg ">
         <div class="py-5">
-            <div class="col-8 offset-2 py-5 ">
-            <textarea id="admineditor" name="admineditor"></textarea>
-                
-            <button type="submit" name="submit" class="btn btn-success my-3">Submit</button>
-            </div>
+            <form method="post">
+                <div class="col-8 offset-2 py-5 ">
+                    <textarea id="admineditor" name="admineditor"></textarea>
+                    <button type="submit" name="submit" class="btn btn-success my-3">Submit</button>
+                </div>
             </form>
         </div>
-    
+    </div>
+
     <script>
         var editor = CKEDITOR.replace('admineditor');
         CKFinder.setupCKEditor(editor);
@@ -90,12 +90,12 @@ if (!isset($_SESSION['email'])) {
                 type: "POST",
                 url: "dbconnect.php",
                 data: {
-                    'check_detail_editor': 1,
+                    'check_detail_content': 1,
                 },
                 dataType: "json",
                 success: function(response) {
                     $('#admineditor').html(response.content)
-                   
+                    console.log(response)
                 }
             });
         });
