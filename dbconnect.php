@@ -9,7 +9,6 @@ class dbconnection
     public $connect_db;
     public function __construct()
     {
-        
         $this->connect_db = new mysqli($this->db_host, $this->db_user, $this->db_pass, $this->db_name);
         if (!$this->connect_db) {
             echo "connected";
@@ -72,13 +71,13 @@ class dbconnection
         echo json_encode($data);
     }
 
+
     public function editorappend()
     {
-        $sql = "SELECT content  FROM  editor";
-        $result = $this->connect_db->query($sql);
-
-        if (mysqli_num_rows($result) > 0) {
-            $data = $result->fetch_assoc();
+        $query = "SELECT content  FROM  editor";
+        $dashboard = $this->connect_db->query($query);
+        if (mysqli_num_rows($dashboard) > 0) {
+            $data = $dashboard->fetch_assoc();
         } else {
             echo "not data";
         }
