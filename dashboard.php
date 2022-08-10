@@ -40,7 +40,7 @@ if (!isset($_SESSION['email'])) {
     <?php
     if (isset($_SESSION['insert'])) {
     ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" id="insert">
             <strong></strong> <?php echo $_SESSION['insert']; ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -51,7 +51,7 @@ if (!isset($_SESSION['email'])) {
     <?php
     if (isset($_SESSION['update'])) {
     ?>
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <div class="alert alert-success alert-dismissible fade show" role="alert" id="update">
             <strong></strong> <?php echo $_SESSION['update']; ?>
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
@@ -103,6 +103,24 @@ if (!isset($_SESSION['email'])) {
             });
         });
     </script>
+
+<script>
+            window.setTimeout(function()
+             {
+                $("#insert").slideUp(1000, function() 
+                {
+                    $(this).remove();
+                });
+            }, 1900);
+
+            window.setTimeout(function()
+             {
+                $("#update").slideUp(1000,function() 
+                {
+                    $(this).remove();
+                });
+            },1990);
+        </script>
 
     <?php
     if (isset($_POST['logout'])) {
