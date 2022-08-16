@@ -134,7 +134,7 @@ if (isset($_POST['login'])) {
                 } else {
                     span.innerHTML = "**Please enter correct email address"
                     button.disabled = true;
-                    return false;
+                    
                     
                 }
             
@@ -164,6 +164,12 @@ if (isset($_POST['login'])) {
                     btn.disabled = true;
                     return false;
                 }
+
+if(!email){
+    return false;
+}else{
+    return true;
+}
 
             }
         </script>
