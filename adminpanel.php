@@ -129,7 +129,7 @@ if (isset($_POST['login'])) {
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
-                    return false;
+                    
                 }
             
 
