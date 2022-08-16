@@ -142,7 +142,7 @@ if (isset($_POST['login'])) {
                 if (password.match(regexpass)) {
                     spanpass.innerHTML = "**Space are not allowed";
                     btn.disabled = true;
-                    return false;
+                    
                 } 
                 else 
                 {
