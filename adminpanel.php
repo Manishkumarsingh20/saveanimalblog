@@ -89,7 +89,7 @@ if (isset($_POST['login'])) {
                     <form method="post">
                         <!-- email start -->
                         <div class="form-floating mb-3">
-                            <input name="email" type="text" class="form-control" value= "<?php echo isset($_POST["login"]) ? $_POST["email"] : ''; ?>" onkeyup="return validateadmit()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
+                            <input name="email" type="text" class="form-control" onkeyup="return validateadmit()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                             <span id="text"></span>
                         </div>
@@ -116,24 +116,24 @@ if (isset($_POST['login'])) {
 
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
-                var btn = document.getElementById("login");
+                var button = document.getElementById("login");
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
-                    btn.disabled = true;
+                    button.disabled = true;
                     // span.innerHTML = "**Space are not allowed";
                     // return false;
                 } else {
                     span.innerHTML = "";
-                    btn.disabled = false;
+                    button.disabled = false;
                 }
                 if (email.match(emairegex)) {
                     span.innerHTML = "";
-                    btn.disabled = false;
+                    button.disabled = false;
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
-                    btn.disabled = true;
+                    button.disabled = true;
                     
                 }
             
