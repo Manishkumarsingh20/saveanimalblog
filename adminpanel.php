@@ -125,13 +125,15 @@ if (isset($_POST['login'])) {
                     
                 } else {
                     span.innerHTML = "";
+                    return true;
                 }
                 if (email.match(emairegex)) {
                     span.innerHTML = "";
+                    return true;
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
-                    return false;
+                    
                 }
             
              
@@ -145,10 +147,12 @@ if (isset($_POST['login'])) {
                     
                 } else {
                     spanpass.innerHTML = "";
+                    return true;
                 }
 
                 if (password.match(passregex)) {
                     spanpass.innerHTML = "";
+                    return true;
                 } else {
                     spanpass.innerHTML = "**Please enter Correct Password"
                     return false;
@@ -158,7 +162,7 @@ if (isset($_POST['login'])) {
                  return false;
             }
             else{
-                
+
                 return true;
             }
 
