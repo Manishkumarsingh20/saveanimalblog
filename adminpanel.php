@@ -128,9 +128,11 @@ if (isset($_POST['login'])) {
                 } else {
                     span.innerHTML = "";
                     return true;
+                    btn.disabled=false;
                 }
                 if (email.match(emairegex)) {
                     span.innerHTML = "";
+                    btn.disabled=false;
                     return true;
 
                 } else {
