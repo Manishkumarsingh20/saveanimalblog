@@ -103,7 +103,7 @@ if (isset($_POST['login'])) {
                         </div>
                         <!-- password end -->
 
-                        <button type="submit" name="login" id="login" onclick="return validateadmit()" class="btn btn-primary one mt-3">Login</button>
+                        <button type="submit" name="login" id="login" onclick="return validateadmit();return validatepassword()" class="btn btn-primary one mt-3">Login</button>
                     </form>
                 </div>
                 <div class="col-sm-4"></div>
@@ -120,27 +120,29 @@ if (isset($_POST['login'])) {
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
-                    // btn.disabled = true;
+                    btn.disabled = true;
                     // span.innerHTML = "**Space are not allowed";
                     // return false;
                 } else {
                     span.innerHTML = "";
-                    // btn.disabled = false;
+                    btn.disabled = false;
                 }
                 if (email.match(emairegex)) {
                     span.innerHTML = "";
-                    // btn.disabled = false;
+                    btn.disabled = false;
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
-                    // btn.disabled = true;
+                    btn.disabled = true;
+                    return false;
                       
 
                 }
 
-                return false;
+            }
 
 
+                function validatepassword(){
                 var password = document.getElementById('floatingPassword').value;
                 var spanpass = document.getElementById('textpass');
                 var btn = document.getElementById("login");
@@ -164,11 +166,7 @@ if (isset($_POST['login'])) {
                     return false;
                 }
 
-                if(!email){
-                    return false;
-                }else{
-                    return true;
-                }
+                
 
             }
         </script>
