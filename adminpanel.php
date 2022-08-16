@@ -86,7 +86,7 @@ if (isset($_POST['login'])) {
             <div class="row py-4 my-5">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 my-5">
-                    <form method="post" onsubmit="return validatepassword()">
+                    <form method="post">
                         <!-- email start -->
                         <div class="form-floating mb-3">
                             <input name="email" type="text" class="form-control" onkeyup="return validateadmit()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
@@ -97,7 +97,7 @@ if (isset($_POST['login'])) {
 
                         <!-- password start -->
                         <div class="form-floating">
-                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validatepassword()" autocomplete="off" id="floatingPassword" placeholder="Password">
+                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validateadmit()" autocomplete="off" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                             <span id="textpass"></span>
                         </div>
@@ -121,8 +121,8 @@ if (isset($_POST['login'])) {
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
                     btn.disabled = true;
-                    span.innerHTML = "**Space are not allowed";
-                    return false;
+                    // span.innerHTML = "**Space are not allowed";
+                    // return false;
                 } else {
                     span.innerHTML = "";
                     btn.disabled = false;
@@ -134,24 +134,21 @@ if (isset($_POST['login'])) {
                 } else {
                     span.innerHTML = "**Please enter correct email address"
                     btn.disabled = true;
-                    return false;
-                      
-
+                    
                 }
 
-            }
+            
 
 
-                function validatepassword(){
+                
                 var password = document.getElementById('floatingPassword').value;
                 var spanpass = document.getElementById('textpass');
                 var btn = document.getElementById("login");
                 var passregex = /^[a-zA-Z0-9!@#$%^&*]+$/;
                 var regexpass = /^\s*$/;
                 if (password.match(regexpass)) {
-                    spanpass.innerHTML = "**Space are not allowed";
+                    // spanpass.innerHTML = "**Space are not allowed";
                     btn.disabled = true;
-                    return false;
 
                 } else {
                     spanpass.innerHTML = "";
@@ -163,9 +160,12 @@ if (isset($_POST['login'])) {
                     btn.disabled = false;
                 } else {
                     spanpass.innerHTML = "**Please enter Correct Password"
-                    btn.disabled = true;
+                    // btn.disabled = true;
                     return false;
                 }
+
+                
+
             }
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
