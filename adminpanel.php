@@ -166,7 +166,11 @@ if (isset($_POST['login'])) {
                     // return false;
                 }
 
-                
+                if(!email){
+                    return false;
+                }else{
+                    return true;
+                }
 
             }
         </script>
