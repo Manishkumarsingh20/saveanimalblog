@@ -116,24 +116,25 @@ if (isset($_POST['login'])) {
 
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
-                var btn = document.getElementById("login");
+                var button = document.getElementById("login");
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
-                    // button.disabled = true;
+                    button.disabled = true;
                     // span.innerHTML = "**Space are not allowed";
                     // return false;
                 } else {
                     span.innerHTML = "";
-                    // button.disabled = false;
+                    button.disabled = false;
                 }
                 if (email.match(emairegex)) {
                     span.innerHTML = "";
-                    // button.disabled = false;
+                    button.disabled = false;
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
-                    // button.disabled = true;
+                    button.disabled = true;
+                    return false;
                     
                 }
             
@@ -146,29 +147,23 @@ if (isset($_POST['login'])) {
                 var regexpass = /^\s*$/;
                 if (password.match(regexpass)) {
                     // spanpass.innerHTML = "**Space are not allowed";
-                    // btn.disabled = true;
+                    btn.disabled = true;
                     
                 } 
                 else 
                 {
                     spanpass.innerHTML = "";
-                    // btn.disabled = false;
+                    btn.disabled = false;
                 }
 
                 if (password.match(passregex)) {
                     spanpass.innerHTML = "";
-                    // btn.disabled = false;
+                    btn.disabled = false;
                 } else {
                     spanpass.innerHTML = "**Please enter Correct Password"
-                    // btn.disabled = true;
+                    btn.disabled = true;
                     return false;
                 }
-
-if(!btn){
-    btn.disabled=true;
-}else{
-    btn.disabled=false;
-}
 
             }
         </script>
