@@ -83,6 +83,8 @@ class dbconnection
         }
         echo json_encode($data);
     }
+
+ 
 }
 
 $obj = new dbconnection;

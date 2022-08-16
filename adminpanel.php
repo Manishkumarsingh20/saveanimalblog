@@ -89,7 +89,7 @@ if (isset($_POST['login'])) {
                     <form method="post">
                         <!-- email start -->
                         <div class="form-floating mb-3">
-                            <input name="email" type="text" class="form-control" value="<?php if(isset($_POST['login'])){ echo $_POST['email'];} ?>" onkeyup="return validateadmit_panel()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
+                            <input name="email" type="text" class="form-control" onkeyup="return validateadmit()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                             <span id="text"></span>
                         </div>
@@ -97,13 +97,13 @@ if (isset($_POST['login'])) {
 
                         <!-- password start -->
                         <div class="form-floating">
-                            <input name="pass" type="password" class="form-control" onkeyup="return validateadmit()" autocomplete="off" id="floatingPassword" placeholder="Password">
+                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validatepass()" autocomplete="off" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                             <span id="textpass"></span>
                         </div>
                         <!-- password end -->
 
-                        <button type="submit" name="login" id="login" onclick="return validateadmit()" onclick="return validateadmit_panel()" class="btn btn-primary one mt-3">Login</button>
+                        <button type="submit" name="login" id="login" onclick="return validateadmit();return validatepass()" class="btn btn-primary one mt-3">Login</button>
                     </form>
                 </div>
                 <div class="col-sm-4"></div>
@@ -113,7 +113,9 @@ if (isset($_POST['login'])) {
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script>
-            function validateadmit_panel() {
+
+            function validateadmit() {
+               
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
                 var regex = /^\s*$/;
@@ -132,9 +134,8 @@ if (isset($_POST['login'])) {
                     return false;
                 }
             }
-
-
-            function validateadmit() {
+             
+            function validatepass(){
                 var password = document.getElementById('floatingPassword').value;
                 var spanpass = document.getElementById('textpass');
                 var passregex = /^[a-zA-Z0-9!@#$%^&*]+$/;
@@ -154,6 +155,7 @@ if (isset($_POST['login'])) {
                 }
 
             }
+            
         </script>
 
         <script>
