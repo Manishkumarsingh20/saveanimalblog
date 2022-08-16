@@ -116,19 +116,24 @@ if (isset($_POST['login'])) {
 
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
+                var btn = document.getElementById("login");
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
+                    btn.disabled = true;
                     // span.innerHTML = "**Space are not allowed";
                     // return false;
                 } else {
                     span.innerHTML = "";
+                    btn.disabled = false;
                 }
                 if (email.match(emairegex)) {
                     span.innerHTML = "";
+                    btn.disabled = false;
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
+                    btn.disabled = true;
                     
                 }
             
