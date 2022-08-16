@@ -118,10 +118,12 @@ if (isset($_POST['login'])) {
                
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
+                var btn = document.getElementById('login')
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
                     span.innerHTML = "**Space are not allowed";
+                    btn.disabled=true;
                     
                 } else {
                     span.innerHTML = "";
@@ -133,6 +135,7 @@ if (isset($_POST['login'])) {
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
+                    btn.disabled=true;
                     
                 }
             
