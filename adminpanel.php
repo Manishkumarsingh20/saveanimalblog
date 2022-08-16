@@ -163,13 +163,13 @@ if (isset($_POST['login'])) {
                     return false;
                 }
 
-                if(!email || !password){
-                 return false;
-            }
-            else{
+            //     if(!email || !password){
+            //      return false;
+            // }
+            // else{
 
-                return true;
-            }
+            //     return true;
+            // }
 
 
             }
