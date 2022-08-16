@@ -97,13 +97,13 @@ if (isset($_POST['login'])) {
 
                         <!-- password start -->
                         <div class="form-floating">
-                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validatepassword()" autocomplete="off" id="floatingPassword" placeholder="Password">
+                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validateadmit()" autocomplete="off" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                             <span id="textpass"></span>
                         </div>
                         <!-- password end -->
 
-                        <button type="submit" name="login" id="login" onclick="return validateadmit();return validatepassword()" class="btn btn-primary one mt-3">Login</button>
+                        <button type="submit" name="login" id="login" onclick="return validateadmit()" class="btn btn-primary one mt-3">Login</button>
                     </form>
                 </div>
                 <div class="col-sm-4"></div>
@@ -139,10 +139,10 @@ if (isset($_POST['login'])) {
 
                 }
 
-            }
+            
 
 
-                function validatepassword(){
+               
                 var password = document.getElementById('floatingPassword').value;
                 var spanpass = document.getElementById('textpass');
                 var btn = document.getElementById("login");
