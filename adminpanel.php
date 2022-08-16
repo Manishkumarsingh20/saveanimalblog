@@ -97,85 +97,82 @@ if (isset($_POST['login'])) {
 
                         <!-- password start -->
                         <div class="form-floating">
-                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validateadmit()" autocomplete="off" id="floatingPassword" placeholder="Password">
+                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validatepass()" autocomplete="off" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                             <span id="textpass"></span>
                         </div>
                         <!-- password end -->
 
-                        <button type="submit" name="login" id="login" onclick="return validateadmit()" class="btn btn-primary one mt-3">Login</button>
+                        <button type="submit" name="login" id="login" onclick="return validateadmit();return validatepass()" class="btn btn-primary one mt-3">Login</button>
                     </form>
                 </div>
                 <div class="col-sm-4"></div>
             </div>
         </div>
 
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script>
-            function validateadmit() {
 
+            function validateadmit() {
+               
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
-                var btn = document.getElementById("login");
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
-                    btn.disabled = true;
-                    // span.innerHTML = "**Space are not allowed";
-                    // return false;
+                    span.innerHTML = "**Space are not allowed";
+                    return false;
                 } else {
                     span.innerHTML = "";
-                    btn.disabled = false;
                 }
                 if (email.match(emairegex)) {
                     span.innerHTML = "";
-                    btn.disabled = false;
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
-                    btn.disabled = true;
-                    
+                    return false;
                 }
-
-            
-
-
-                
+            }
+             
+            function validatepass(){
                 var password = document.getElementById('floatingPassword').value;
                 var spanpass = document.getElementById('textpass');
-                var btn = document.getElementById("login");
                 var passregex = /^[a-zA-Z0-9!@#$%^&*]+$/;
                 var regexpass = /^\s*$/;
                 if (password.match(regexpass)) {
-                    // spanpass.innerHTML = "**Space are not allowed";
-                    btn.disabled = true;
-
+                    spanpass.innerHTML = "**Space are not allowed";
+                    return false;
                 } else {
                     spanpass.innerHTML = "";
-                    btn.disabled = false;
                 }
 
                 if (password.match(passregex)) {
                     spanpass.innerHTML = "";
-                    btn.disabled = false;
                 } else {
                     spanpass.innerHTML = "**Please enter Correct Password"
-                    // btn.disabled = true;
                     return false;
                 }
 
-                
-
             }
+            
         </script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
         <script>
-            window.setTimeout(function() {
-                $("#alert").slideUp(500, function() {
+            window.setTimeout(function()
+             {
+                $("#alert").slideUp(500, function() 
+                {
                     $(this).remove();
                 });
             }, 1900);
+        </script>
+
+
+        <script>
+            if (window.history.replaceState) {
+                window.history.replaceState(null, null, window.location.href);
+            }
         </script>
 </body>
 
