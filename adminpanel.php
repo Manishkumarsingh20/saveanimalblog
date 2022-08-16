@@ -163,7 +163,7 @@ if (isset($_POST['login'])) {
                 } else {
                     spanpass.innerHTML = "**Please enter Correct Password"
                     btn.disabled = true;
-                    return false;
+                    // return false;
                 }
 
                 
