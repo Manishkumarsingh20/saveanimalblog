@@ -2,9 +2,9 @@
 session_start();
 class dbconnection
 {
-    protected $db_name = 'projectdemo';
-    protected $db_user = 'root';
-    protected $db_pass = 'hestabit';
+    protected $db_name = 'manish';
+    protected $db_user = 'tse';
+    protected $db_pass = 'bPmtHasjyTJ2SgZJ';
     protected $db_host = 'localhost';
     public $connect_db;
     public function __construct()
@@ -83,6 +83,8 @@ class dbconnection
         }
         echo json_encode($data);
     }
+
+ 
 }
 $obj = new dbconnection;
 
