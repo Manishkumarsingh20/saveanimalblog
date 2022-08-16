@@ -116,30 +116,30 @@ if (isset($_POST['login'])) {
 
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
-                var button = document.getElementById("login");
+                var btn = document.getElementById("login");
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
-                    button.disabled = true;
+                    btn.disabled = true;
                     // span.innerHTML = "**Space are not allowed";
                     // return false;
                 } else {
                     span.innerHTML = "";
-                    button.disabled = false;
+                    btn.disabled = false;
                 }
                 if (email.match(emairegex)) {
                     span.innerHTML = "";
-                    button.disabled = false;
+                    btn.disabled = false;
 
                 } else {
                     span.innerHTML = "**Please enter correct email address"
-                    button.disabled = true;
-                    
-                    
-                }
-            
+                    btn.disabled = true;
 
-            
+
+                }
+
+
+
                 var password = document.getElementById('floatingPassword').value;
                 var spanpass = document.getElementById('textpass');
                 var btn = document.getElementById("login");
@@ -148,10 +148,8 @@ if (isset($_POST['login'])) {
                 if (password.match(regexpass)) {
                     // spanpass.innerHTML = "**Space are not allowed";
                     btn.disabled = true;
-                    
-                } 
-                else 
-                {
+
+                } else {
                     spanpass.innerHTML = "";
                     btn.disabled = false;
                 }
@@ -165,11 +163,13 @@ if (isset($_POST['login'])) {
                     return false;
                 }
 
-if(!email){
-    return false;
-}else{
-    return true;
-}
+                if (!email || !password) {
+                    btn.disabled = true;
+                    return false;
+                } else {
+                    btn.disabled = false;
+                    return true;
+                }
 
             }
         </script>
