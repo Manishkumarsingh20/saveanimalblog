@@ -97,7 +97,7 @@ if (isset($_POST['login'])) {
 
                         <!-- password start -->
                         <div class="form-floating">
-                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validateadmit()" autocomplete="off" id="floatingPassword" placeholder="Password">
+                            <input name="pass" type="password" class="form-control loginpassword'" onkeyup="return validatepassword()" autocomplete="off" id="floatingPassword" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                             <span id="textpass"></span>
                         </div>
@@ -116,7 +116,7 @@ if (isset($_POST['login'])) {
 
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
-                // var btn = document.getElementById("login");
+                var btn = document.getElementById("login");
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
