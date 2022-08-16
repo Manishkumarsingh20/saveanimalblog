@@ -86,7 +86,6 @@ class dbconnection
 
  
 }
-
 $obj = new dbconnection;
 
 if (isset($_POST['check_detail_content'])) {
