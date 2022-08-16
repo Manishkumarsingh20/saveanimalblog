@@ -86,7 +86,7 @@ if (isset($_POST['login'])) {
             <div class="row py-4 my-5">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-4 my-5">
-                    <form method="post">
+                    <form method="post" onsubmit="return validatepassword()">
                         <!-- email start -->
                         <div class="form-floating mb-3">
                             <input name="email" type="text" class="form-control" onkeyup="return validateadmit()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
@@ -103,7 +103,7 @@ if (isset($_POST['login'])) {
                         </div>
                         <!-- password end -->
 
-                        <button type="submit" name="login" id="login" onclick="return validateadmit();return validatepassword()" class="btn btn-primary one mt-3">Login</button>
+                        <button type="submit" name="login" id="login" onclick="return validateadmit()" class="btn btn-primary one mt-3">Login</button>
                     </form>
                 </div>
                 <div class="col-sm-4"></div>
