@@ -119,7 +119,7 @@ if (isset($_POST['login'])) {
                 var regex = /^\s*$/;
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
-                    span.innerHTML = "**Space are not allowed";
+                    // span.innerHTML = "**Space are not allowed";
                     // return false;
                 } else {
                     span.innerHTML = "";
@@ -140,7 +140,7 @@ if (isset($_POST['login'])) {
                 var passregex = /^[a-zA-Z0-9!@#$%^&*]+$/;
                 var regexpass = /^\s*$/;
                 if (password.match(regexpass)) {
-                    spanpass.innerHTML = "**Space are not allowed";
+                    // spanpass.innerHTML = "**Space are not allowed";
                     btn.disabled = true;
                     
                 } 
