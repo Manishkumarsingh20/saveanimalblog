@@ -110,12 +110,10 @@ if (isset($_POST['login'])) {
             </div>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-        <script>
 
+        <script>
             function validateadmit() {
-               
+
                 var email = document.getElementById('floatingInput').value;
                 var span = document.getElementById('text')
                 var regex = /^\s*$/;
@@ -134,45 +132,43 @@ if (isset($_POST['login'])) {
                     return false;
                 }
             }
-             
-            function validatepass(){
+
+            function validatepass() {
                 var password = document.getElementById('floatingPassword').value;
                 var spanpass = document.getElementById('textpass');
+                var btn = document.getElementById("login");
                 var passregex = /^[a-zA-Z0-9!@#$%^&*]+$/;
                 var regexpass = /^\s*$/;
                 if (password.match(regexpass)) {
                     spanpass.innerHTML = "**Space are not allowed";
+                    btn.disabled = true;
                     return false;
-                } else {
+                } 
+                else 
+                {
                     spanpass.innerHTML = "";
+                    btn.disabled = false;
                 }
 
                 if (password.match(passregex)) {
                     spanpass.innerHTML = "";
+                    btn.disabled = false;
                 } else {
                     spanpass.innerHTML = "**Please enter Correct Password"
+                    btn.disabled = true;
                     return false;
                 }
 
             }
-            
         </script>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
         <script>
-            window.setTimeout(function()
-             {
-                $("#alert").slideUp(500, function() 
-                {
+            window.setTimeout(function() {
+                $("#alert").slideUp(500, function() {
                     $(this).remove();
                 });
             }, 1900);
-        </script>
-
-
-        <script>
-            if (window.history.replaceState) {
-                window.history.replaceState(null, null, window.location.href);
-            }
         </script>
 </body>
 
