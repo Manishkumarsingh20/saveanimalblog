@@ -120,7 +120,7 @@ if (isset($_POST['login'])) {
                 var emairegex = /^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$/
                 if (email.match(regex)) {
                     span.innerHTML = "**Space are not allowed";
-                    return false;
+                    // return false;
                 } else {
                     span.innerHTML = "";
                 }
