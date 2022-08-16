@@ -89,7 +89,7 @@ if (isset($_POST['login'])) {
                     <form method="post">
                         <!-- email start -->
                         <div class="form-floating mb-3">
-                            <input name="email" type="text" class="form-control" value= "<?php echo isset($_POST["email"]) ? $_POST["email"] : ''; ?>" onkeyup="return validateadmit()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
+                            <input name="email" type="text" class="form-control" value= "<?php echo isset($_POST["login"]) ? $_POST["email"] : ''; ?>" onkeyup="return validateadmit()" autocomplete="off" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                             <span id="text"></span>
                         </div>
